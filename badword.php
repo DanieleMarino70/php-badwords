@@ -1,2 +1,15 @@
 <?php
-// init
+// ** Gestire il tutto con due file diversi.
+// Il primo file dovrà permettere all'utente di inserire i dati e inviare la richiesta al server.
+
+// ** Il secondo file riceverà la richiesta ed eseguirà queste operazioni:
+// - stampare a schermo il paragrafo e la sua lunghezza
+// - stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare
+
+$badWords = ["ore", "psu", "olo"];
+$words = $_GET["word"];
+
+echo $words . " è lunga " . strlen($words);
+
+$filteredWords = str_replace($badWords, "***", $words);
+echo $filteredWords;
